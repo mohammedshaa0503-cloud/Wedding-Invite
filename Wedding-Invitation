@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safik Hashim & Nuha Fatima - Wedding Invitation</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+        .hero {
+            background: url('https://png.pngtree.com/thumb_back/fh260/background/20241217/pngtree-deco-chic-stylish-black-gold-wedding-invite-image_16809578.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: 50px;
+            letter-spacing: 2px;
+        }
+        .names {
+            font-size: 45px;
+            margin-top: 20px;
+        }
+        .section {
+            padding: 60px 20px;
+        }
+        .date, .venue {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        #countdown {
+            font-size: 32px;
+            margin-top: 20px;
+        }
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: #fff;
+            margin: 40px auto;
+        }
+        .quote {
+            font-size: 24px;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body><!-- HERO SECTION -->
+<div class="hero" data-aos="fade-up">
+    <h1>The Wedding of</h1>
+    <div class="names">Safik Hashim & Nuha Fatima</div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <h2>Wedding Date & Time</h2>
+    <div class="divider"></div>
+    <div class="date">01/02/2026, Sunday at 11:00 AM</div>
+    <div id="countdown"></div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <h2>Venue</h2>
+    <div class="divider"></div>
+    <div class="venue">AK Garden, Manjeshwar</div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <h2>Quranic Quotes on Marriage</h2>
+    <div class="divider"></div>
+    <div class="quote">“And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts. Indeed in that are signs for people who reflect.” (Quran 30:21)</div>
+    <div class="quote">“And marry those among you who are single, and the righteous among your male and female servants. If they are poor, Allah will enrich them from His bounty.” (Quran 24:32)</div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1500 });</script>
+
+<!-- Demo Wedding Song -->
+<audio id="bgm" autoplay loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav" type="audio/mpeg">
+</audio>
+
+<script>
+    // COUNTDOWN TIMER
+    const eventDate = new Date("February 1, 2026 11:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    }, 1000);
+</script>
+
+</body>
+</html>
